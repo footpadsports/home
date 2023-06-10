@@ -9,16 +9,30 @@
     }
     body {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       padding-top: 20px;
       text-align: center;
+      overflow: hidden;
+    }
+    .marquee {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: marquee 8s linear infinite;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
 <body>
   <h1>The rocket is on the launchpad</h1>
   <img src="rocket.webp" alt="Rocket">
-  <h1>Soon in Dubaï</h1>
+  <div class="marquee">
+    <span>Soon in Dubaï</span>
+  </div>
 </body>
 </html>
